@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 verseDiv.appendChild(verseNumber);
 
                 const teluguText = document.createElement('p');
-                teluguText.textContent = verse.verse;
+                // Combine the 'te' properties of each word in the 'words' array
+                teluguText.textContent = verse.words.map(word => word.te).join(' ');
                 verseDiv.appendChild(teluguText);
 
                 bibleContainer.appendChild(verseDiv);
